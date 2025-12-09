@@ -1,12 +1,22 @@
-import HeroSection from "@/components/sections/hero/hero-section";
+import HeroSection from '@/components/sections/hero/hero-section';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-4 px-8 bg-white dark:bg-black sm:items-start">
-    
+    <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">
+      <main
+        style={{
+          backgroundImage: 'url("work_in_progress-wallpaper-1600x900.jpg")',
+          backgroundClip: 'border-box',
+          backgroundAttachment: 'fixed',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          backgroundBlendMode: 'darken',
+        }}
+        className="flex min-h-screen w-full max-w-screen items-center justify-between sm:items-start"
+      >
         <HeroSection />
-        
       </main>
     </div>
   );
