@@ -43,7 +43,7 @@ export default function HeroSection({
         </div>
         <div className="flex max-h-full items-center justify-center">
           <ImageCard
-            imgSrc="/photo.jpg"
+            imgSrc="./photo.jpg"
             alt="photo"
             size={400}
             customClasses={animationClasses}
