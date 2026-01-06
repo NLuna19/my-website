@@ -19,6 +19,7 @@ export default function HeroSection({
 
   return (
     <div className="flex h-lvh w-full flex-col">
+      {/* todo: esto al layout --> esto es un header al final */}
       <section className="w-full max-w-full bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-1 md:items-center">
@@ -29,6 +30,8 @@ export default function HeroSection({
           </div>
         </div>
       </section>
+
+      {/* todo: esto si se queda aca */}
       <section className="mx-auto flex max-w-6xl grow gap-8 px-6 lg:px-8">
         <div className="m-auto w-full">
           <p className="h-full max-w-xl min-w-fit bg-slate-100 px-2 py-4 text-justify text-slate-950">
