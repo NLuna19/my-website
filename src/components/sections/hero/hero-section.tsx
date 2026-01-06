@@ -1,5 +1,4 @@
-import DownloadCVButton from '@/components/shared/download-cv';
-import Link from 'next/link';
+import ImageCard from '@/components/ui/image-card/image-card';
 
 type HeroProps = {
   name?: string;
@@ -16,17 +15,43 @@ export default function HeroSection({
   ctaText = 'Contáctame',
   ctaHref = '/contact',
 }: HeroProps) {
+  const animationClasses = 'transition-all duration-1000! ease-in hover:rotate-2';
+
   return (
-    <section className="m-auto w-full max-w-[50%] rounded-md bg-slate-950/60 py-2 shadow-lg shadow-black/20 hover:bg-slate-950/70 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-1 md:items-center">
-          <div>
-            <p className="text-sm font-medium text-sky-400">Hola, me llamo</p>
-            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-              {name}
-            </h1>
-            <h2 className="mt-2 text-2xl font-semibold text-slate-300">{title}</h2>
-            <p className="mt-6 max-w-xl text-lg text-slate-300">{description}</p>
+    <div className="flex h-lvh w-full flex-col">
+      <section className="w-full max-w-full bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="grid gap-8 md:grid-cols-1 md:items-center">
+            <div>
+              <h1 className="mt-4 text-xl font-semibold tracking-tight text-slate-950">{name}</h1>
+              <h2 className="mt-0 text-xl font-extralight text-slate-800">{title}</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto flex max-w-6xl grow gap-8 px-6 lg:px-8">
+        <div className="m-auto w-full">
+          <p className="h-full max-w-xl min-w-fit bg-slate-100 px-2 py-4 text-justify text-slate-950">
+            <span className="block text-9xl tracking-wider">Construyo</span>
+            <span className="block px-1 text-[4.625rem]/[1]">
+              experiencias web accesibles, rápidas y modernas.
+            </span>
+          </p>
+        </div>
+        <div className="flex max-h-full items-center justify-center">
+          <ImageCard
+            imgSrc="/photo.jpg"
+            alt="photo"
+            size={400}
+            customClasses={animationClasses}
+          ></ImageCard>
+        </div>
+      </section>
+    </div>
+  );
+}
+{
+  /* 
 
             <div className="mt-8 flex gap-4">
               <Link
@@ -44,10 +69,5 @@ export default function HeroSection({
               </Link>
 
               <DownloadCVButton />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+            </div> */
 }
