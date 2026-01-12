@@ -4,7 +4,7 @@ import { FaLinkedin } from 'react-icons/fa';
 export default function LinkedInIcon() {
   return (
     <SocialIconButton
-      href="https://www.linkedin.com/in/tu-perfil"
+      href="https://www.linkedin.com/in/nluna190898/"
       icon={FaLinkedin}
       label="LinkedIn"
       className="text-[#0A66C2] hover:text-[#004182]"
