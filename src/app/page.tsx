@@ -1,4 +1,5 @@
 import HeroSection from '@/components/sections/hero/hero-section';
+import HeaderSection from '@/components/ui/header';
 
 export default function Home() {
   return (
@@ -16,7 +17,10 @@ export default function Home() {
         // }}
         className="flex min-h-screen w-full max-w-screen items-center justify-between bg-slate-100 sm:items-start"
       >
-        <HeroSection />
+        <div className="flex h-lvh w-full flex-col">
+          <HeaderSection title="Nicolas Omar Luna" description="Desarrollador Full Stack" />
+          <HeroSection />
+        </div>
       </main>
     </div>
   );
