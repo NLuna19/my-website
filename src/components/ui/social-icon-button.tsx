@@ -17,13 +17,23 @@ export default function SocialIconButton({
   className = 'text-blue-600 hover:text-blue-800',
 }: SocialIconButtonProps) {
   return (
-    <Link
-      href={href}
-      target="_blank"
-      aria-label={label}
-      className={`transition-transform hover:scale-110 ${className}`}
-    >
-      <Icon size={size} />
-    </Link>
+    <div className="group relative inline-flex">
+      <Link
+        href={href}
+        target="_blank"
+        aria-label={label}
+        className={`inline-flex items-center justify-center transition-transform hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none ${className} `}
+      >
+        <Icon size={size} />
+      </Link>
+
+      {/* Tooltip */}
+      <span
+        role="tooltip"
+        className="pointer-events-none absolute top-8 left-1/2 -translate-x-1/2 rounded-md bg-gray-900 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"
+      >
+        {label}
+      </span>
+    </div>
   );
 }
