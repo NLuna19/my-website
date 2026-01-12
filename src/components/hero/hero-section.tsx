@@ -1,4 +1,4 @@
-import ImageCard from '@/components/ui/image-card';
+import ImageCard from '@/ui/image-card';
 
 type HeroProps = {};
 

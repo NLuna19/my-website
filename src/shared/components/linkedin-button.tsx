@@ -1,4 +1,4 @@
-import SocialIconButton from '@/components/ui/social-icon-button';
+import SocialIconButton from '@/ui/social-icon-button';
 import { FaLinkedin } from 'react-icons/fa';
 
 export default function LinkedInIcon() {
