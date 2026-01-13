@@ -9,7 +9,7 @@ export default function GitHubButton() {
       href={GITHUB_URL}
       icon={FaGithub}
       label="GitHub"
-      className="text-gray-900 hover:text-black focus-visible:ring-gray-900"
+      className="text-gray-800 hover:text-black focus-visible:ring-gray-800"
     />
   );
 }

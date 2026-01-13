@@ -7,7 +7,7 @@ export default function LinkedInIcon() {
       href="https://www.linkedin.com/in/nluna190898/"
       icon={FaLinkedin}
       label="LinkedIn"
-      className="text-[#0A66C2] hover:text-[#004182]"
+      className="text-gray-800 hover:text-[#0A66C2] focus-visible:ring-gray-800"
     />
   );
 }

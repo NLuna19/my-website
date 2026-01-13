@@ -1,3 +1,4 @@
+import DownloadCVButton from '@/shared/components/download-cv-button';
 import GitHubButton from '@/shared/components/github-button';
 import LinkedInIcon from '@/shared/components/linkedin-button';
 
@@ -16,6 +17,7 @@ export default function HeaderSection({ title, description }: HeaderSectionProps
             <h2 className="mt-0 text-xl font-extralight text-slate-800">{description}</h2>
           </div>
           <div className="col-span-2 flex h-full items-end justify-end gap-2">
+            <DownloadCVButton />
             <GitHubButton />
             <LinkedInIcon />
           </div>
