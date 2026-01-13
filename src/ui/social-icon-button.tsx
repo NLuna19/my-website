@@ -7,6 +7,7 @@ interface SocialIconButtonProps {
   label: string;
   size?: number;
   className?: string;
+  download?: boolean;
 }
 
 export default function SocialIconButton({
@@ -15,6 +16,7 @@ export default function SocialIconButton({
   label,
   size = 28,
   className = 'text-blue-600 hover:text-blue-800',
+  download = false,
 }: SocialIconButtonProps) {
   return (
     <div className="group relative inline-flex">
@@ -22,6 +24,7 @@ export default function SocialIconButton({
         href={href}
         target="_blank"
         aria-label={label}
+        download={download}
         className={`inline-flex items-center justify-center transition-transform hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none ${className} `}
       >
         <Icon size={size} />
