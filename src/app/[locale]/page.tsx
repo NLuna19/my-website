@@ -24,8 +24,11 @@ export default async function Home({ params }: Props) {
       <main className="flex min-h-screen w-full max-w-screen items-center justify-between bg-slate-100 sm:items-start">
         <div className="flex h-lvh w-full flex-col">
           <HeaderSection title={title} description={description} />
-          <LocaleSwitcher />
+
           <HeroSection />
+        </div>
+        <div className="fixed right-4 bottom-4">
+          <LocaleSwitcher />
         </div>
       </main>
     </div>
