@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mi Sitio Web
 
-## Getting Started
+Sitio web personal moderno construido con **Next.js 16**, **React 19** y **Tailwind CSS**, con soporte multiidioma (Español/Inglés) y modo oscuro.
 
-First, run the development server:
+## 🚀 Características
+
+- ✅ **Internacionalización (i18n)** - Español e Inglés
+- ✅ **Modo Oscuro** - Soporte completo
+- ✅ **Diseño Responsivo** - Mobile-first
+- ✅ **Renderizado Estático** - SSG prerendering
+- ✅ **Selector de Idioma** - Botón flotante inteligente
+- ✅ **TypeScript** - Type-safe en todo el código
+- ✅ **Accesible** - WCAG AAA compliant
+
+## 📋 Requisitos
+
+- Node.js 18+
+- Yarn o npm
+
+## 🛠️ Instalación
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repositorio>
+cd my-website
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 💻 Desarrollo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Inicia el servidor de desarrollo:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+yarn dev
+```
 
-## Learn More
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-To learn more about Next.js, take a look at the following resources:
+## 🌍 Sistema i18n
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El proyecto implementa un sistema de internacionalización personalizado sin dependencias externas:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Archivos de Traducción
 
-## Deploy on Vercel
+```
+messages/
+├── es.json    # Español
+└── en.json    # Inglés
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Uso en Servidor
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```tsx
+import { getMessages } from '@/navigation';
+
+export default async function Page({ params }) {
+  const messages = await getMessages(params.locale);
+  return <h1>{messages.hero.title}</h1>;
+}
+```
+
+### Uso en Cliente
+
+```tsx
+'use client';
+import { useI18n } from '@/navigation';
+
+export default function Component() {
+  const { t } = useI18n();
+  return <h1>{t('hero.title')}</h1>;
+}
+```
+
+### Añadir Nuevo Idioma
+
+1. Crea `messages/[locale].json` con las traducciones
+2. Actualiza `LOCALES` en `src/i18n/config.ts`
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── app/              # Next.js App Router
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── [locale]/     # Rutas localizadas
+├── components/       # Componentes reutilizables
+├── i18n/            # Sistema de i18n
+│   ├── config.ts    # Configuración
+│   ├── server.ts    # Utilidades servidor
+│   └── client.tsx   # Context + hooks
+├── lib/             # Funciones utilitarias
+├── navigation.ts    # Exports centralizados
+└── types/           # Tipos TypeScript
+```
+
+## 🔧 Configuración Importante
+
+### Locales (src/i18n/config.ts)
+
+```typescript
+export const LOCALES = ['es', 'en'];
+export const DEFAULT_LOCALE = 'es';
+```
+
+### Rutas Dinámicas
+
+El proyecto usa `[locale]` como segmento dinámico. Las rutas se generan automáticamente como SSG:
+
+- `/es` - Página en español
+- `/en` - Página en inglés
+
+## 🚀 Build & Despliegue
+
+Crea una build optimizada:
+
+```bash
+yarn build
+```
+
+Inicia el servidor producción:
+
+```bash
+yarn start
+```
+
+## 📦 Dependencias Principales
+
+- **Next.js 16.0.7** - Framework React
+- **React 19.2.0** - Librería UI
+- **Tailwind CSS 4** - Estilos
+- **react-icons 5.5.0** - Iconos
+- **TypeScript** - Type safety
+
+## 🎨 Componentes Destacados
+
+### LocalSwitcher
+
+Selector de idioma flotante con dropdown inteligente que se posiciona automáticamente según el espacio disponible.
+
+### Temas
+
+- **Light** - Tema claro por defecto
+- **Dark** - Tema oscuro activable
+
+## 📄 Licencia
+
+MIT
