@@ -1,3 +1,4 @@
+'use client';
 import DownloadCVButton from '@/shared/components/download-cv-button';
 import GitHubButton from '@/shared/components/github-button';
 import LinkedInIcon from '@/shared/components/linkedin-button';
