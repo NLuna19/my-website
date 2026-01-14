@@ -1,10 +1,21 @@
 {
-  "Header": {
-    "title": "Nicolas Omar Luna",
-    "description": "Desarrollador FullStack | Desarrolador Web"
+  "metadata": {
+    "locale": "Español",
+    "direction": "ltr"
   },
-  "Home": {
-    "title": "Bienvenido",
-    "subtitle": "Esta es la página principal"
+  "common": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "header": {
+    "title": "Nicolas Omar Luna",
+    "description": "Desarrollador FullStack | Desarrollador Web",
+    "greeting": "Bienvenido a mi portafolio"
+  },
+  "footer": {
+    "copyright": "© 2025 Nicolas Luna. Todos los derechos reservados."
   }
 }

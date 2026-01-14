@@ -1,7 +1,6 @@
-export const dynamic = 'force-dynamic';
-
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { I18nProvider } from '@/i18n/client';
+import { getLocaleFromString, Locale, LOCALES } from '@/i18n/config';
+import { getMessages } from '@/i18n/server';
 import type { ReactNode } from 'react';
 
 type Props = {
@@ -11,14 +10,19 @@ type Props = {
   }>;
 };
 
+export async function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  const messages = await getMessages();
+  const { locale: rawLocale } = await params;
+  const locale = getLocaleFromString(rawLocale) as Locale;
+
+  const messages = await getMessages(locale);
 
   return (
-    <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
+    <I18nProvider locale={locale} messages={messages}>
       {children}
-    </NextIntlClientProvider>
+    </I18nProvider>
   );
 }
