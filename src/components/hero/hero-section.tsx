@@ -4,9 +4,12 @@ export default function HeroSection() {
   const animationClasses = 'transition-all duration-1000! ease-in hover:rotate-2';
 
   return (
-    <section className="flex min-h-[inherit] max-w-6xl gap-8 px-6 lg:px-8">
+    <section className="mx-auto flex min-h-[inherit] max-w-6xl gap-8 px-6 lg:px-8">
       <div className="m-auto w-full">
-        <p className="h-full max-w-xl min-w-fit bg-slate-100 px-2 py-4 text-justify text-slate-950">
+        <p
+          className="h-full max-w-xl min-w-fit bg-slate-100 px-2 py-4 text-justify text-slate-950"
+          style={{ transform: 'scale(0.85)' }}
+        >
           <span className="block text-9xl tracking-wider">Construyo</span>
           <span className="block px-1 text-[4.625rem]/[1]">
             experiencias web accesibles, rápidas y modernas.
@@ -17,7 +20,7 @@ export default function HeroSection() {
         <ImageCard
           imgSrc="./photo.jpg"
           alt="photo"
-          size={400}
+          size={375}
           customClasses={animationClasses}
         ></ImageCard>
       </div>
