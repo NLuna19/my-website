@@ -1,12 +1,10 @@
 import ImageCard from '@/ui/image-card';
 
-type HeroProps = {};
-
-export default function HeroSection({}: HeroProps) {
+export default function HeroSection() {
   const animationClasses = 'transition-all duration-1000! ease-in hover:rotate-2';
 
   return (
-    <section className="mx-auto flex max-w-6xl grow gap-8 px-6 lg:px-8">
+    <section className="flex min-h-[inherit] max-w-6xl gap-8 px-6 lg:px-8">
       <div className="m-auto w-full">
         <p className="h-full max-w-xl min-w-fit bg-slate-100 px-2 py-4 text-justify text-slate-950">
           <span className="block text-9xl tracking-wider">Construyo</span>

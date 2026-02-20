@@ -1,15 +1,28 @@
 import DownloadCVButton from '@/shared/components/download-cv-button';
 import GitHubButton from '@/shared/components/github-button';
 import LinkedInIcon from '@/shared/components/linkedin-button';
+import { useEffect, useRef } from 'react';
 
 interface HeaderSectionProps {
   title: string;
   description: string;
+  setHeaderHeight: (height: number) => void;
 }
 
-export default function HeaderSection({ title, description }: HeaderSectionProps) {
+export default function HeaderSection({ title, description, setHeaderHeight }: HeaderSectionProps) {
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight);
+    }
+  }, [setHeaderHeight]);
+
   return (
-    <section className="w-full max-w-full bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20">
+    <section
+      ref={headerRef}
+      className="fixed z-10 w-full max-w-full bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20"
+    >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid grid-cols-12 items-center">
           <div className="col-span-10 flex flex-col justify-start">

@@ -1,7 +1,13 @@
+'use client';
+
 import HeroSection from '@/components/hero/hero-section';
+import ContentUI from '@/ui/content';
 import HeaderSection from '@/ui/header';
+import { useState } from 'react';
 
 export default function Home() {
+  const [headerHeight, setHeaderHeight] = useState<number>(0);
+
   return (
     <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">
       <main
@@ -17,10 +23,15 @@ export default function Home() {
         // }}
         className="flex min-h-screen w-full max-w-screen items-center justify-between bg-slate-100 sm:items-start"
       >
-        <div className="flex h-lvh w-full flex-col">
-          <HeaderSection title="Nicolas Omar Luna" description="Desarrollador Full Stack" />
+        <HeaderSection
+          title="Nicolas Omar Luna"
+          description="Desarrollador Full Stack"
+          setHeaderHeight={setHeaderHeight}
+        />
+
+        <ContentUI headerHeight={headerHeight}>
           <HeroSection />
-        </div>
+        </ContentUI>
       </main>
     </div>
   );
