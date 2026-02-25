@@ -21,7 +21,7 @@ export default function HeaderSection({ title, description, setHeaderHeight }: H
   return (
     <section
       ref={headerRef}
-      className="fixed z-50 w-full max-w-full bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20"
+      className="fixed top-0 left-0 z-50 w-full max-w-full bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20"
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid grid-cols-12 items-center">
