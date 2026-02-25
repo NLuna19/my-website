@@ -4,15 +4,14 @@ export default function HeroSection() {
   const animationClasses = 'transition-all duration-1000! ease-in hover:rotate-2';
 
   return (
-    <section className="mx-auto flex min-h-[inherit] max-w-6xl gap-8 px-6 lg:px-8">
-      <div className="m-auto w-full">
+    <section className="mx-auto flex min-h-[inherit] max-w-6xl flex-col-reverse justify-end gap-4 px-8 pt-2 md:grid md:grid-cols-3 md:grid-rows-1 md:items-center md:gap-8 md:pt-0 lg:px-20">
+      <div className="col-span-2 mx-auto w-full">
         <p
-          className="h-full max-w-xl min-w-fit bg-slate-100 px-2 py-4 text-justify text-slate-950"
-          style={{ transform: 'scale(0.85)' }}
+          className="h-full max-w-xl min-w-fit bg-slate-100 text-slate-950 md:text-end"
+          style={{ transform: '' }}
         >
-          <span className="block text-9xl tracking-wider">Construyo</span>
-          <span className="block px-1 text-[4.625rem]/[1]">
-            experiencias web accesibles, rápidas y modernas.
+          <span className="block px-1 text-3xl md:text-5xl lg:text-6xl xl:text-7xl">
+            Construyo experiencias web accesibles, rápidas y modernas.
           </span>
         </p>
       </div>
