@@ -1,10 +1,14 @@
+import ProjectsSectionButton from '@/shared/components/projects-section-button';
 import ImageCard from '@/ui/image-card';
 
-export default function HeroSection() {
+export default function HeroSection({ id }: { id?: string }) {
   const animationClasses = 'transition-all duration-1000! ease-in hover:rotate-2';
 
   return (
-    <section className="mx-auto flex min-h-[inherit] max-w-6xl flex-col-reverse justify-end gap-4 px-8 pt-2 md:grid md:grid-cols-3 md:grid-rows-1 md:items-center md:gap-8 md:pt-0 lg:px-20">
+    <section
+      id={id}
+      className="flex min-h-[inherit] max-w-6xl flex-col-reverse justify-end gap-4 md:grid md:grid-cols-3 md:grid-rows-1 md:items-center md:gap-8"
+    >
       <div className="col-span-2 mx-auto w-full">
         <p
           className="h-full max-w-xl min-w-fit bg-slate-100 text-slate-950 md:text-end"
@@ -22,6 +26,9 @@ export default function HeroSection() {
           size={375}
           customClasses={animationClasses}
         ></ImageCard>
+      </div>
+      <div className="absolute bottom-0 left-0 flex w-full items-center justify-center pb-4 md:pb-8">
+        <ProjectsSectionButton />
       </div>
     </section>
   );
