@@ -21,13 +21,17 @@ export default function HeaderSection({ title, description, setHeaderHeight }: H
   return (
     <section
       ref={headerRef}
-      className="fixed top-0 left-0 z-50 w-full max-w-full bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20"
+      className="fixed top-0 left-0 z-50 w-full max-w-full border-b border-slate-300 bg-slate-100 pt-2 pb-4 shadow-md shadow-black/20 dark:border-zinc-800 dark:bg-zinc-900"
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid grid-cols-12 items-center">
           <div className="col-span-10 flex flex-col justify-start">
-            <h1 className="mt-4 text-xl font-semibold tracking-tight text-slate-950">{title}</h1>
-            <h2 className="mt-0 text-xl font-extralight text-slate-800">{description}</h2>
+            <h1 className="mt-4 text-xl font-semibold tracking-tight text-slate-950 dark:text-slate-300">
+              {title}
+            </h1>
+            <h2 className="mt-0 text-xl font-extralight text-slate-800 dark:text-slate-400">
+              {description}
+            </h2>
           </div>
           <div className="col-span-2 flex h-full items-end justify-end gap-2">
             <DownloadCVButton />

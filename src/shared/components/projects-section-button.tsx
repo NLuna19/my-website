@@ -1,3 +1,4 @@
+import { SOCIAL_BUTTON_VARIANTS } from '@/constants/classes';
 import { sectionIds } from '@/types/sections';
 import SocialIconButton from '@/ui/social-icon-button';
 import { FaArrowAltCircleDown } from 'react-icons/fa';
@@ -7,7 +8,7 @@ export default function ProjectsSectionButton() {
     <SocialIconButton
       href={`#${sectionIds.projects}`}
       icon={FaArrowAltCircleDown}
-      className="text-gray-800 hover:text-sky-800 focus-visible:ring-gray-800"
+      className={SOCIAL_BUTTON_VARIANTS.basic + ' hover:text-sky-800'}
       target="_top"
     />
   );

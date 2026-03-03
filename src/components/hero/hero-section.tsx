@@ -11,7 +11,7 @@ export default function HeroSection({ id }: { id?: string }) {
     >
       <div className="col-span-2 mx-auto w-full">
         <p
-          className="h-full max-w-xl min-w-fit bg-slate-100 text-slate-950 md:text-end"
+          className="h-full max-w-xl min-w-fit text-slate-950 md:text-end dark:text-slate-300"
           style={{ transform: '' }}
         >
           <span className="block px-1 text-3xl md:text-5xl lg:text-6xl xl:text-7xl">

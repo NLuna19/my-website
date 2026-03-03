@@ -15,9 +15,11 @@ export default function ImageCard({
 }: ImageCardProps) {
   return (
     <div
-      className={`mx-auto h-fit w-fit overflow-hidden border shadow-md shadow-black/30 md:shadow-2xl ${customClasses}`}
+      className={`mx-auto h-fit w-fit overflow-hidden border border-white shadow-md shadow-black/30 md:shadow-2xl dark:border-slate-300 ${customClasses}`}
       style={{
-        border: `${size < 200 ? 2 : size * 0.01}px solid white`,
+        borderStyle: 'solid',
+        borderWidth: `${size < 200 ? 2 : size * 0.01}px`,
+        // border: `${size < 200 ? 2 : size * 0.01}px solid white`,
         ...(forceMinSize
           ? {
               minWidth: `${size}px`,

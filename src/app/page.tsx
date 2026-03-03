@@ -12,6 +12,13 @@ export default function Home() {
   const [headerHeight, setHeaderHeight] = useState<number>(0);
   const gridCardData: CardProps[] = [
     {
+      title: 'Nicolas Luna Portfolio',
+      description: 'Este Portfolio Web. Desarrollado en Next.Js',
+      imageSrc: './react.jpg',
+      link: 'https://github.com/NLuna19/my-website',
+      target: '_blank',
+    },
+    {
       title: 'Angular Basic CRUD',
       description:
         'Aplicación Angular que implementa CRUD completo. Permite crear, leer, actualizar y eliminar registros de forma profesional y escalable.',
@@ -34,6 +41,7 @@ export default function Home() {
       link: 'https://github.com/NLuna19/superheroes-challenge',
       target: '_blank',
     },
+
     {
       title: 'Facility Goloso',
       description:
@@ -45,7 +53,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">
+    <div className="flex min-h-screen items-center justify-center font-sans text-slate-950 dark:text-slate-300">
       <main
         // style={{
         //   backgroundImage: 'url("work_in_progress-wallpaper-1600x900.jpg")',
@@ -57,7 +65,7 @@ export default function Home() {
         //   backgroundColor: 'rgba(0, 0, 0, 0.6)',
         //   backgroundBlendMode: 'darken',
         // }}
-        className="flex min-h-screen w-full max-w-screen flex-col items-center justify-between bg-slate-100 sm:items-start"
+        className="flex min-h-screen w-full max-w-screen flex-col items-center justify-between bg-slate-100 antialiased sm:items-start dark:bg-zinc-900"
       >
         <HeaderSection
           title="Nicolas Omar Luna"
@@ -68,17 +76,19 @@ export default function Home() {
         <ContentUI headerHeight={headerHeight}>
           <HeroSection id={sectionIds.hero} />
 
-          <div id={sectionIds.projects} style={{ height: headerHeight, width: '100%' }}></div>
           <GridUI
+            id={sectionIds.projects}
+            title="Proyectos Destacados"
             gridItems={gridCardData}
+            headerHeight={headerHeight}
             classNames={{
               content: 'min-h-[inherit]',
             }}
           />
         </ContentUI>
 
-        <footer className="mt-4 w-full bg-slate-800 text-slate-200">
-          <div className="container mx-auto px-4 py-6">
+        <footer className="mt-4 w-full border-t border-zinc-800 bg-zinc-900 text-zinc-400">
+          <div className="container mx-auto px-4 pt-2 pb-3 text-xs">
             <p className="text-center">
               © 2026{' '}
               <a href="https://github.com/NLuna19" target="_blank">
