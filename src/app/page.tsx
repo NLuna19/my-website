@@ -104,14 +104,14 @@ export default function Home() {
             onToggle={() => {
               darkModeToggle();
             }}
-            className="text-white dark:text-slate-300"
+            className="text-zinc-300 dark:text-slate-800"
           />
         </ContentUI>
 
         <footer className="mt-4 w-full border-t border-zinc-800 bg-zinc-900 text-zinc-400">
-          <div className="container mx-auto px-4 pt-2 pb-3 text-xs">
+          <div className="container mx-auto px-4 pt-3 pb-4 text-xs">
             <p className="text-center">
-              © 2026
+              © 2026{' '}
               <a href="https://github.com/NLuna19" target="_blank">
                 Nicolas Omar Luna
               </a>

@@ -19,7 +19,7 @@ export default function Switcher({
 }: SwitcherProps) {
   return (
     <div
-      className={`fixed right-[25px] bottom-[25px] z-50 inline-flex h-6 w-11 cursor-pointer items-center rounded-full border border-zinc-800 bg-zinc-800 transition-colors dark:bg-zinc-800 ${className}`}
+      className={`fixed right-8 bottom-8 z-50 inline-flex h-6 w-11 cursor-pointer items-center rounded-full border border-zinc-800 bg-zinc-800 transition-colors dark:bg-zinc-300 ${className}`}
       onClick={onToggle}
     >
       <div
