@@ -6,10 +6,13 @@ import { sectionIds } from '@/types/sections';
 import ContentUI from '@/ui/contentUI';
 import GridUI from '@/ui/gridUI';
 import HeaderSection from '@/ui/header';
-import { useState } from 'react';
+import Switcher from '@/ui/switcher';
+import { useEffect, useState } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState<number>(0);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const gridCardData: CardProps[] = [
     {
       title: 'Nicolas Luna Portfolio',
@@ -52,6 +55,15 @@ export default function Home() {
     },
   ];
 
+  const darkModeToggle = () => {
+    document.getElementsByTagName('html')[0].classList.toggle('dark');
+    setIsDarkMode(!isDarkMode);
+  };
+
+  useEffect(() => {
+    setIsDarkMode(document.getElementsByTagName('html')[0].classList.contains('dark'));
+  }, []);
+
   return (
     <div className="flex min-h-screen items-center justify-center font-sans text-slate-950 dark:text-slate-300">
       <main
@@ -72,8 +84,16 @@ export default function Home() {
           description="Desarrollador Full Stack"
           setHeaderHeight={setHeaderHeight}
         />
-
         <ContentUI headerHeight={headerHeight}>
+          <Switcher
+            leftIcon={FaSun}
+            rightIcon={FaMoon}
+            isOn={isDarkMode}
+            onToggle={() => {
+              darkModeToggle();
+            }}
+          />
+
           <HeroSection id={sectionIds.hero} />
 
           <GridUI
@@ -90,7 +110,7 @@ export default function Home() {
         <footer className="mt-4 w-full border-t border-zinc-800 bg-zinc-900 text-zinc-400">
           <div className="container mx-auto px-4 pt-2 pb-3 text-xs">
             <p className="text-center">
-              © 2026{' '}
+              © 2026
               <a href="https://github.com/NLuna19" target="_blank">
                 Nicolas Omar Luna
               </a>

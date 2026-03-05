@@ -1,5 +1,4 @@
 import { CardProps } from '@/types/cardUI';
-import { sectionIds } from '@/types/sections';
 import CardUI from './cardUI';
 
 interface GridClassNames {
@@ -23,10 +22,10 @@ export default function GridUI({
 }: GridProps) {
   return (
     <>
-      <div id={sectionIds.projects} style={{ height: headerHeight, width: '100%' }}></div>
+      <div id={id} style={{ height: headerHeight, width: '100%' }}></div>
 
       {title && (
-        <a href={`#${sectionIds.projects}`} target="_top">
+        <a href={`#${id}`} target="_top">
           <span className="cursor-pointer text-3xl/loose font-light text-slate-950 dark:text-slate-300">
             {title}
           </span>
