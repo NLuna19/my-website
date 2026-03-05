@@ -8,7 +8,7 @@ import GridUI from '@/ui/gridUI';
 import HeaderSection from '@/ui/header';
 import Switcher from '@/ui/switcher';
 import { useEffect, useState } from 'react';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { FaCircle, FaMoon } from 'react-icons/fa';
 
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState<number>(0);
@@ -85,15 +85,6 @@ export default function Home() {
           setHeaderHeight={setHeaderHeight}
         />
         <ContentUI headerHeight={headerHeight}>
-          <Switcher
-            leftIcon={FaSun}
-            rightIcon={FaMoon}
-            isOn={isDarkMode}
-            onToggle={() => {
-              darkModeToggle();
-            }}
-          />
-
           <HeroSection id={sectionIds.hero} />
 
           <GridUI
@@ -104,6 +95,16 @@ export default function Home() {
             classNames={{
               content: 'min-h-[inherit]',
             }}
+          />
+
+          <Switcher
+            leftIcon={FaCircle}
+            rightIcon={FaMoon}
+            isOn={isDarkMode}
+            onToggle={() => {
+              darkModeToggle();
+            }}
+            className="text-white dark:text-slate-300"
           />
         </ContentUI>
 
