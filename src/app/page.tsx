@@ -1,6 +1,7 @@
 'use client';
 
 import HeroSection from '@/components/hero/hero-section';
+import { PROJECTS } from '@/constants/projectsData';
 import { CardProps } from '@/types/cardUI';
 import { sectionIds } from '@/types/sections';
 import ContentUI from '@/ui/contentUI';
@@ -13,47 +14,7 @@ import { FaCircle, FaMoon } from 'react-icons/fa';
 export default function Home() {
   const [headerHeight, setHeaderHeight] = useState<number>(0);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const gridCardData: CardProps[] = [
-    {
-      title: 'Nicolas Luna Portfolio',
-      description: 'Este Portfolio Web. Desarrollado en Next.Js',
-      imageSrc: './react.jpg',
-      link: 'https://github.com/NLuna19/my-website',
-      target: '_blank',
-    },
-    {
-      title: 'Angular Basic CRUD',
-      description:
-        'Aplicación Angular que implementa CRUD completo. Permite crear, leer, actualizar y eliminar registros de forma profesional y escalable.',
-      imageSrc: './ng-image.jpg',
-      link: 'https://github.com/NLuna19/AngularBasicCRUD',
-      target: '_blank',
-    },
-    {
-      title: 'TaskFlow',
-      description: 'API REST de Gestión de Tareas. Realizado en .NET 8 y C#',
-      imageSrc: './Microsoft_.NET_logo.svg',
-      link: 'https://github.com/NLuna19/TaskFlow',
-      target: '_blank',
-    },
-    {
-      title: 'Superheroes Challenge',
-      description:
-        'Desarrollo en Angular utilizando una API, con axios para consumir datos de superhéroes. El proyecto se centra en la creación de una interfaz de usuario atractiva y funcional, que permita a los usuarios explorar y obtener información sobre sus superhéroes favoritos.',
-      imageSrc: './ng-image.jpg',
-      link: 'https://github.com/NLuna19/superheroes-challenge',
-      target: '_blank',
-    },
-
-    {
-      title: 'Facility Goloso',
-      description:
-        'Trabajo practico Universitario que implementa un algoritmo Goloso como solucion del problema de Facility Location. Realizado en Java',
-      imageSrc: './java-4-logo.jpg',
-      link: 'https://github.com/NLuna19/facility_goloso',
-      target: '_blank',
-    },
-  ];
+  const gridCardData: CardProps[] = PROJECTS;
 
   const darkModeToggle = () => {
     document.getElementsByTagName('html')[0].classList.toggle('dark');
@@ -81,7 +42,7 @@ export default function Home() {
       >
         <HeaderSection
           title="Nicolas Omar Luna"
-          description="Desarrollador Full Stack"
+          description="Fullstack SSR (frontend-focused)"
           setHeaderHeight={setHeaderHeight}
         />
         <ContentUI headerHeight={headerHeight}>

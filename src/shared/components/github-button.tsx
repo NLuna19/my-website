@@ -1,4 +1,4 @@
-import { SOCIAL_BUTTON_VARIANTS } from '@/constants/classes';
+import { ANIMATION_CLASSES, SOCIAL_BUTTON_VARIANTS } from '@/constants/classes';
 import SocialIconButton from '@/ui/social-icon-button';
 import { FaGithub } from 'react-icons/fa';
 
@@ -10,7 +10,11 @@ export default function GitHubButton() {
       href={GITHUB_URL}
       icon={FaGithub}
       label="GitHub"
-      className={SOCIAL_BUTTON_VARIANTS.basic + ' light:hover:text-black dark:hover:text-white'}
+      className={
+        SOCIAL_BUTTON_VARIANTS.basic +
+        ' light:hover:text-black dark:hover:text-white ' +
+        ANIMATION_CLASSES.bounceFriendly
+      }
     />
   );
 }

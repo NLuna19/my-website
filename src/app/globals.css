@@ -35,3 +35,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* custom animations */
+@keyframes bounce-friendly {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* utility class that can be applied directly or via hover: modifier */
+.animate-bounce-friendly {
+  animation: bounce-friendly 0.6s ease-in-out;
+}
+
+/* ensure hover variant works even if Tailwind doesn't generate it */
+.hover\:animate-bounce-friendly:hover {
+  animation: bounce-friendly 0.6s ease-in-out;
+}

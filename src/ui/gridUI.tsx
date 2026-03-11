@@ -47,6 +47,7 @@ export default function GridUI({
                 description={item.description}
                 imageSrc={item.imageSrc}
                 link={item.link}
+                target={item.target}
               ></CardUI>
             </div>
           ))

@@ -1,4 +1,4 @@
-import { SOCIAL_BUTTON_VARIANTS } from '@/constants/classes';
+import { ANIMATION_CLASSES, SOCIAL_BUTTON_VARIANTS } from '@/constants/classes';
 import SocialIconButton from '@/ui/social-icon-button';
 import { FaRegFilePdf } from 'react-icons/fa';
 
@@ -10,7 +10,9 @@ export default function DownloadCVButton() {
       href={RESUME_URL}
       icon={FaRegFilePdf}
       label="Resume"
-      className={SOCIAL_BUTTON_VARIANTS.basic + ' hover:text-red-700'}
+      className={
+        SOCIAL_BUTTON_VARIANTS.basic + ' hover:text-red-700 ' + ANIMATION_CLASSES.bounceFriendly
+      }
     />
   );
 }

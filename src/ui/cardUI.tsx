@@ -1,4 +1,5 @@
 import { CardProps } from '@/types/cardUI';
+import Link from 'next/link';
 
 export default function CardUI({ title, description, imageSrc, link, target }: CardProps) {
   return (
@@ -7,13 +8,13 @@ export default function CardUI({ title, description, imageSrc, link, target }: C
         <img src={imageSrc} alt={title} className="h-40 w-full rounded-md object-cover" />
         <h3 className="mt-2 text-xl font-bold">{title}</h3>
         <p className="mt-1 h-20 overflow-auto text-slate-700 dark:text-slate-300">{description}</p>
-        <a
+        <Link
           href={link}
           target={target}
           className="mt-2 inline-block text-sky-600 hover:text-sky-800"
         >
           Ver más
-        </a>
+        </Link>
       </div>
     </div>
   );
