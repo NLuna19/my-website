@@ -9,6 +9,14 @@ export const PROJECTS: CardProps[] = [
     target: '_blank',
   },
   {
+    title: 'Agenda Empresa Spring Boot',
+    description:
+      'API de gestión empresarial desarrollada con Java Spring Boot. Implementa funcionalidades para la administración de tareas y recursos.',
+    imageSrc: './og-spring.png',
+    link: 'https://github.com/NLuna19/0526_AgendaEmpresaSpringBoot',
+    target: '_blank',
+  },
+  {
     title: 'Angular Basic CRUD',
     description:
       'Aplicación Angular que implementa CRUD completo. Permite crear, leer, actualizar y eliminar registros de forma profesional y escalable.',
@@ -31,7 +39,6 @@ export const PROJECTS: CardProps[] = [
     link: 'https://github.com/NLuna19/superheroes-challenge',
     target: '_blank',
   },
-
   {
     title: 'Facility Goloso',
     description:
