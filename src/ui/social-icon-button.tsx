@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { HTMLAttributeAnchorTarget } from 'react';
+import React, { HTMLAttributeAnchorTarget } from 'react';
 import { IconType } from 'react-icons';
 
 interface SocialIconButtonProps {
@@ -10,6 +10,7 @@ interface SocialIconButtonProps {
   className?: string;
   download?: boolean;
   target?: HTMLAttributeAnchorTarget | undefined;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 export default function SocialIconButton({
@@ -20,6 +21,7 @@ export default function SocialIconButton({
   className = 'text-blue-600 hover:text-blue-800',
   download = false,
   target = '_blank',
+  onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {},
 }: SocialIconButtonProps) {
   return (
     <div className="group relative inline-flex">
@@ -29,6 +31,7 @@ export default function SocialIconButton({
         aria-label={label}
         download={download}
         className={`inline-flex items-center justify-center transition-transform hover:scale-110 focus-visible:scale-110 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none ${className} `}
+        onClick={onClick}
       >
         <Icon size={size} />
       </Link>

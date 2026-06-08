@@ -9,7 +9,7 @@ export const PROJECTS: CardProps[] = [
     target: '_blank',
   },
   {
-    title: 'Agenda Empresa Spring Boot',
+    title: 'Agenda Spring Boot',
     description:
       'API de gestión empresarial desarrollada con Java Spring Boot. Implementa funcionalidades para la administración de tareas y recursos.',
     imageSrc: './og-spring.png',

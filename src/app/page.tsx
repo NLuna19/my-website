@@ -1,6 +1,7 @@
 'use client';
 
 import HeroSection from '@/components/hero/hero-section';
+import SkillsSection from '@/components/skills/skills-section';
 import { PROJECTS } from '@/constants/projectsData';
 import { CardProps } from '@/types/cardUI';
 import { sectionIds } from '@/types/sections';
@@ -23,6 +24,15 @@ export default function Home() {
 
   useEffect(() => {
     setIsDarkMode(document.getElementsByTagName('html')[0].classList.contains('dark'));
+  }, []);
+
+  useEffect(() => {
+    const hasScrolled = window.scrollY > 0;
+    if (hasScrolled) {
+      document.body.style.removeProperty('overflow');
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
   }, []);
 
   return (
@@ -48,6 +58,12 @@ export default function Home() {
         <ContentUI headerHeight={headerHeight}>
           <HeroSection id={sectionIds.hero} />
 
+          <SkillsSection
+            id={sectionIds.skills}
+            title="Technical Skills"
+            headerHeight={headerHeight}
+          ></SkillsSection>
+
           <GridUI
             id={sectionIds.projects}
             title="Proyectos Destacados"
@@ -57,7 +73,6 @@ export default function Home() {
               content: 'min-h-[inherit]',
             }}
           />
-
           <Switcher
             leftIcon={FaCircle}
             rightIcon={FaMoon}

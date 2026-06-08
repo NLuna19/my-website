@@ -22,7 +22,11 @@ export default function GridUI({
 }: GridProps) {
   return (
     <>
-      <div id={id} style={{ height: headerHeight, width: '100%' }}></div>
+      <div
+        id={id}
+        className="border-t border-slate-300 dark:border-zinc-700"
+        style={{ height: headerHeight, width: '100%' }}
+      ></div>
 
       {title && (
         <a href={`#${id}`} target="_top">
